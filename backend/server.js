@@ -1,10 +1,12 @@
-PWD0 = process.cwd()
+require('./utils.js')
 
 //overwrite in config
-PORT   = 80
-DOMAIN = 'localhost'
+PORT             = 3000
+DOMAIN           = 'localhost'
+SERVER_SECRET    = '12345678abcdef'
 
-require('./config.js')
+if (file_exists('./config.js'))
+	require('./config.js')
 
 let a = process.argv
 
@@ -24,9 +26,9 @@ function start_server() {
 	server.use(express.json())
 	server.use('/api', router)
 
-	server.listen(PORT, DOMAIN, () => {
+	server.listen(PORT, DOMAIN, function() {
 		console.log('The server is listening on '+DOMAIN+':'+PORT)
-	})	
+	})
 
 	server.get('/', function(req, res) {
 		res.status(200).send('AAAAA')
