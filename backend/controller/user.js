@@ -22,7 +22,8 @@ function validate_user_info(user, mode) {
 }
 
 function generate_user_cookie(user) {
-	let cookie = hash(user.username) + '|||' + user.id + generate_session(user.id)
+	let cookie = encodeURIComponent(hash(user.username) + '|||' + user.id + generate_session(user.id))
+	return cookie
 }
 
 let user_controller = {
