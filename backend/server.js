@@ -23,6 +23,8 @@ function start_server() {
 
 	let server = express()
 
+	users = get_users()
+
 	server.use(express.json())
 	server.use('/api', router)
 
