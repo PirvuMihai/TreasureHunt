@@ -7,12 +7,18 @@ body {
 #app {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
+    width: 30%;
+    height: 40%;
     display: flex;
+    outline: auto black 1pt;
+    border-radius: round 5cm;
+    padding: 5%;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
@@ -22,9 +28,27 @@ main {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:space-around;
 }
 
-#username {
+
+h1 {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-top: -15%;
+  margin-bottom: -6%;
+}
+
+input {
+  margin-bottom: 10%;
+  margin-top: -10%;
+}
+
+button {
+  margin: 0 20%;
+  margin-top: -15%
 }
