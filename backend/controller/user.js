@@ -1,3 +1,5 @@
+
+
 // user object, register/login mode
 function validate_user_info(user, mode) {
 	if (mode == 'login') {
@@ -22,7 +24,7 @@ function validate_user_info(user, mode) {
 }
 
 function generate_user_cookie(user) {
-	let cookie = encodeURIComponent(hash(user.username) + '|||' + user.id + generate_session(user.id))
+	let cookie = encodeURIComponent(hash(user.username)+'|||'+user.id+'|||'+generate_session(user.id))
 	return cookie
 }
 
@@ -51,6 +53,9 @@ let user_controller = {
 		} catch(e) {
 			res.status(500).send('Something went wrong')
 		}
+	},
+	register_to_team: async function(req, res) {
+
 	}
 }
 

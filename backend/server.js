@@ -24,6 +24,7 @@ function start_server() {
 	let server = express()
 
 	users = get_users()
+	teams = get_teams()
 
 	server.use(express.json())
 	server.use('/api', router)
